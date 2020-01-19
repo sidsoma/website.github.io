@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Mid-Air is a multi-modal synthetic dataset for low altitude drone flights in unstructured environments. It contains synchronized data of multiple sensors for a total of 54 trajectories and more than 420k video frames simulated in various climate conditions.">
+    <meta name="author" content="Michaël Fonder and Marc Van Droogenbroeck">
+
+    <meta property="og:image" content="img/midair-thumbnail1.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://midair.ulg.ac.be" />
+    <meta property="og:title" content="Mid-Air Dataset" />
+    <meta property="og:description" content="Mid-Air is a multi-modal synthetic dataset for low altitude drone flights in unstructured environments. It contains synchronized data of multiple sensors for a total of 54 trajectories and more than 420k video frames simulated in various climate conditions." />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="midair.ulg.ac.be">
+    <meta name="twitter:title" content="Mid-Air Dataset">
+    <meta name="twitter:description" content="Mid-Air is a multi-modal synthetic dataset for low altitude drone flights in unstructured environments.">
+    <meta name="twitter:creator" content="Michaël Fonder and Marc Vandroogenbroeck">
+    <meta name="twitter:image" content="img/midair-thumbnail1.jpg">
+
+    <!-- Balisage JSON-LD généré par l'outil d'aide au balisage de données structurées de Google -->
+    <script type="application/ld+json">
+      { "@context" : "http://schema.org",
+        "@type" : "Dataset",
+        "name" : "Mid-Air",
+        "description" : "Mid-Air is a multi-modal synthetic dataset for low altitude drone flights in unstructured environments. It contains synchronized data of multiple sensors for a total of 54 trajectories and more than 420k video frames simulated in various climate conditions.",
+        "version" : "1.0",
+        "identifier" : "http://hdl.handle.net/2268/234665",
+        "citation" : "Michael Fonder and Marc Van Droogenbroeck, \"Mid-Air: A multi-modal dataset for extremely low altitude drone flights\", Conference on Computer Vision and Pattern Recognition Workshop (CVPRW), 2019",
+        "keywords" : "Computer vision, deep learning, big data, drones, uav, autonomous vehicules, vision, depth, stereo, semantic, visual odometry",
+        "license" : "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License",
+        "distribution" : { "@type" : "DataDownload", "contentUrl" : "https://midair.ulg.ac.be/download.html" }
+      }
+    </script>
+
+
+    <link rel="icon" href="img/logo.ico">
+
+    <title>Mid-Air Dataset</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140855913-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-140855913-1');
+    </script>
+
+
+    <!-- Bootstrap core CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>-->
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Holder.js for placeholder images -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
+    <!-- Custom styles for this template -->
+
+    <style>
+        body {
+            padding-top: 5rem;
+        }
+
+        .starter-template {
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        ul.nav li hyperlink_footer, ul.nav li hyperlink_footer:visited {
+          color: #fff !important;
+        }
+
+        ul.nav li hyperlink_footer:hover, ul.nav li hyperlink_footer:active {
+          color: #fff !important;
+        }
+
+        ul.nav li.active hyperlink_footer {
+          color: #fff !important;
+        }
+        .col_button {
+          -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
+        }
+
+        @keyframes rotation {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(359deg);
+          }
+        }
+
+    </style>
+  </head>
+
+  <body style="background: rgba(52,58,64,0.05);">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container ">
+          <img src="img/profile.svg" width="30" height="30" class="d-inline-block align-top" alt="" style="margin-right: 5px">
+      <a class="navbar-brand" href="index.html">Mid-Air Dataset</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="tech_specs.html">Technical specifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="data_organization.html">Data organization</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="download.html">Download</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+
+    <div class="header" style="padding-top:-25px; margin-top:-25px;background-image: url('img/background.JPEG');background-size: cover;background-position: center 63%; ">
+  <div class="row justify-content-end">
+
+    <div class="col-md-auto text-center"  style="background: rgba(52,58,64,0.8);">
+      <div style="margin-top:25px;margin-bottom:25px;margin-right:25px;margin-left:25px;">
+      <img class="mx-auto d-block" src="img/profile.svg" alt="" style="max-width: 200px;">
+      <h2 class="display-4 text-light">Mid-Air</h2>
+        <h2 class="display-5 text-light">Dataset</h2>
+      </div>
+    </div>
+
+    <div class="col-lg-2"  style="background: rgba(52,58,64,0.8);"></div>
+  </div>
+
+</div>
+
+<div class="container" style="margin-top:30px;">
+  <div class="row justify-content-center">
+    <div class="col-lg-5">
+      <h2 class="text-center">Mid-Air<br></h2>
+    </div>
+  </div>
+  <div class="row justify-content-center" style="margin-top:28px;">
+    <div class="col-lg-7 text-justify">
+      <p>
+        <b>Mid-Air</b>, The <i>Montefiore Institute Dataset of Aerial Images and Records</i>, is a multi-purpose synthetic
+        dataset for low altitude drone flights. It provides a large amount of synchronized data corresponding to flight records
+        for multi-modal vision sensors and navigation sensors mounted on board of a flying quadcopter. Our multi-modal vision sensors capture
+        RGB pictures, relative surface normal orientation, depth, object semantics and stereo disparity.</p>
+      <p>
+        Additionally, each flight trajectory was recorded several times in the same place but in different climate conditions in order to change the visuals of the scene.
+         This offers the opportunity to train algorithms for robustness to visual changes. A test set for benchmarking this particular criteria is
+         proposed alongside the training data.</p>
+    </div>
+    <div class="col-lg-5">
+      <div class="embed-responsive embed-responsive-16by9 " style="margin-top:5px;">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/X-6hWtOjMHo?modestbranding=1&autohide=1&mute=1&showinfo=0&controls=1&autoplay=1&loop=1&playlist=X-6hWtOjMHo&ref=0&enablejsapi=1" allow="autoplay" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center" style="margin-top:28px;margin-bottom: 28px;">
+    <div class="col-lg-5">
+      <h2 class="text-center">Features</h2>
+    </div>
+  </div>
+
+  <div class="row equal justify-content-lg-start" >
+    <div class="col-lg-auto my-auto" style="background-image: linear-gradient(rgba(52,58,64,0.35), rgba(52,58,64,0.35)), url('img/screen-1.jpg');background-size: cover;background-position: center center;">
+      <br>
+      <span class="text-light text-center"><h2 class="display-4">420k</h2><h1 class="display-6">frames</h1></span>
+      <hr style="border-top: 2px solid white;">
+      <span class="text-light text-center"><h2 class="display-4">79min</h2><h1 class="display-6">flight</h1></span>
+      <br>
+    </div>
+    <div class="col-lg-6 text-justify">
+      <hr>
+      <h2>Large training set</h2>
+      <p>
+        Our dataset contains 79 minutes of drone flight records extracted out of more than 5 hours of flight records.
+        Records were captured by manually flying the drone in a virtual environment thanks to an RC controller connected to the computer.
+        The 79 minutes of flight are divided into 54 individual trajectories of equal length.
+      </p>
+      <p>
+        Since each  trajectory  is  rendered  several  times for different climate scenarios, Mid-Air offers more
+        than 420,000 individual training frames.
+      </p>
+    </div>
+  </div>
+
+  <div class="row  equal justify-content-lg-end  flex-column-reverse flex-lg-row h-100">
+    <div class="col-lg-6">
+      <div class="text-justify">
+      <hr>
+      <h2>Multi-modal sensors</h2>
+      <p>
+        One of the important features of Mid-Air is the types of data which are proposed. Our drone is equipped with 3 RGB cameras
+         and records several ground-truth visual maps such as relative surface normal orientation, depth, object semantics, and stereo disparity.
+      </p>
+      <p>
+        On top of that, our dataset provides drone positioning information. Additionally to ground truths, flight
+        records also contain data logs for several simulated positioning sensors, <i>i.e.</i> accelerometer, gyroscope and GPS.
+      </p>
+      <p>
+        Complete information related to sensor features can be found on the <a href="tech_specs.html">Technical specifications page</a>.
+      </p>
+      </div>
+
+    </div>
+    <div class="col-lg-auto " style="background-image: linear-gradient(rgba(52,58,64,0.35), rgba(52,58,64,0.35)), url('img/screen-2.jpg');background-size: cover;background-position: center center;">
+      <br>
+      <span class="text-light text-center"><h2 class="display-4">3</h2><h1 class="display-6">cameras</h1></span>
+      <hr style="border-top: 2px solid white;">
+      <span class="text-light text-center"><h1 class="display-6">IMU</h1><h1 class="display-6">GPS</h1></span>
+      <br>
+    </div>
+  </div>
+
+  <div class="row equal justify-content-lg-start">
+    <div class="col-lg-auto my-auto " style="background-image: linear-gradient(rgba(52,58,64,0.35), rgba(52,58,64,0.35)), url('img/screen-3.jpg');background-size: cover;background-position: center center;">
+      <br>
+      <span class="text-light text-center"><h2 class="display-4">7</h2><h1 class="display-6">climates</h1></span>
+      <hr style="border-top: 2px solid white;">
+      <span class="text-light text-center"><h2 class="display-4">3</h2><h1 class="display-6">maps</h1></span>
+      <br>
+    </div>
+    <div class="col-lg-6 text-justify">
+      <hr>
+      <h2>Train for robustness</h2>
+      <p>
+        With its 4 weather setups, 3 different seasons, 3 environment maps, and high quality visuals, our dataset should give a good insight
+        on potential performances which can be expected from algorithms in real-world scenarios.
+      </p>
+      <p>
+        Additionally, since each trajectory is recorded several times in different climate conditions, Mid-Air can be used
+        to test the robustness of vision algorithms to visual changes. By the way, we propose a benchmark designed to
+        assess the latter.
+      </p>
+      <p>
+        All considerations taken into account during the design phase of the dataset and the benchmark are explained in
+        detail in <a href="https://orbi.uliege.be/bitstream/2268/234665/3/Fonder2019MidAir.pdf">
+        our paper</a>.
+      </p>
+    </div>
+  </div>
+
+  <div class="row equal justify-content-lg-end flex-column-reverse flex-lg-row">
+    <div class="col-lg-6 text-justify">
+      <hr>
+      <h2>Ease of use</h2>
+      <p>
+        We wanted to reduce the time required to set up our dataset as much as possible. We did this by choosing a straightforward
+        <a href="data_organization.html">Data organization</a>. We also provide simple example
+        scripts ( <a href="https://github.com/montefiore-ai/midair-dataset/" onclick="ga('send', 'event', 'Link', 'Click', 'Goto Github');"><i class="fa fa-external-link" aria-hidden="false"></i>GitHub</a>) to show how to use it.
+      </p>
+      <p>
+        Additionally, we have an automated download procedure that lets you finely select what you want to download.
+        Our <a href="download.html">Download page</a> also contains a small preview
+        for each trajectory so that you can get an idea of its content without having to download it completely.
+      </p>
+    </div>
+    <div class="col-lg-auto my-auto" style="background-image: url('img/screen-5.jpg');background-size: cover;background-position: center center;">
+      <span class="text-light text-center" style="opacity: 0.0;"><h2 class="display-4">&emsp;</h2><h1 class="display-6">&emsp;&emsp;&emsp;&nbsp;&nbsp;</h1></span>
+      <br>
+      <span class="text-light text-center" style="opacity: 0.0;"><h1 class="display-6">&emsp;</h1><h1 class="display-6">&emsp;&emsp;&emsp;&nbsp;&nbsp;</h1></span>
+    </div>
+
+  </div>
+
+
+
+  <div class="row justify-content-center" style="margin-top:28px;">
+    <div class="col-lg-5">
+      <h2 class="text-center">Terms of Use</h2>
+    </div>
+  </div>
+  <div class="row" style="margin-top:28px;">
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-header">
+          Copyright
+        </div>
+        <div class="card-body">
+          <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License"
+                                                                                            style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></p>
+
+          <p>All datasets and benchmarks on this website are copyrighted and published under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+          Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>This means that you must attribute the work in the manner specified by the authors, you may not use this work for commercial purposes and if you alter, transform, or build upon this work, you may distribute the resulting work only under the same license.</p>
+          <p>If you need a commercial license, please contact us.</p>
+        </div>
+
+        </div>
+      <div class="card">
+        <div class="card-header">
+          Citation
+        </div>
+        <div class="card-body">
+          When using this dataset in your research, we would appreciate that you cite our <a href="http://openaccess.thecvf.com/content_CVPRW_2019/papers/UAVision/Fonder_Mid-Air_A_Multi-Modal_Dataset_for_Extremely_Low_Altitude_Drone_Flights_CVPRW_2019_paper.pdf" onclick="ga('send', 'event', 'PDF', 'Download', 'CVPRW2019 Paper - Download');">CVPRW paper</a>: <br>
+          <br>
+          <code>
+          @INPROCEEDINGS{Fonder2019MidAir,
+          <div style="padding-left: 20px">
+              author = {Michael Fonder and Marc Van Droogenbroeck},<br>
+              title = {Mid-Air: A multi-modal dataset for extremely low altitude drone flights},<br>
+              booktitle = {Conference on Computer Vision and Pattern Recognition Workshop (CVPRW)},<br>
+              year = {2019},<br>
+              month = {June} <br>
+          </div>
+          }
+          </code>
+
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.container -->
+
+
+
+    <footer class="page-footer font-small bg-dark text-muted" style="margin-top:25px;">
+
+      <div class="container justify-content-center ">
+
+        <!-- Grid row -->
+        <div class="row" ></div>
+
+        <!--<div class="row justify-content-center  text-md-left" style="margin-top:25px;"><h5 class="text-uppercase font-weight-bold">Related links</h5></div>-->
+        <div class="row justify-content-md-center" style="margin-top:25px;">
+
+
+        <!-- Grid column -->
+          <!--<div class="col-md-3 mt-md-0 mt-3 column vertical-divider hyperlink_footer" >-->
+            <!--<a class="text-muted" href="http://www.montefiore.uliege.be/~mfonder">Michaël Fonder</a>-->
+          <!--</div>-->
+          <!--<div class="col-md-3 mt-md-0 mt-3 column vertical-divider" >-->
+            <!--<a class="text-muted" href="https://www.uliege.be">ULiège</a>-->
+          <!--</div>-->
+          <!--<div class="col-md-3 mt-md-0 mt-3 column vertical-divider" >-->
+            <!--<a class="text-muted" href="http://www.montefiore.uliege.be/">Montefiore Institute</a>-->
+          <!--</div>-->
+          <!--<div class="col-md-3 mt-md-0 mt-3 column vertical-divider" >-->
+            <!--<a class="text-muted" href="http://www.telecom.ulg.ac.be/index.html">TELIM Laboratory</a>-->
+          <!--</div>-->
+          <div class="col-md-3 text-center" >
+            <h5>Related links</h5><br>
+            <p><a class="text-muted" href="https://be.linkedin.com/in/m-fonder">Michaël Fonder</a></p>
+            <p><a class="text-muted" href="http://www.montefiore.uliege.be/">Montefiore Institute</a></p>
+            <p><a class="text-muted" href="https://www.uliege.be">ULiège</a></p>
+          </div>
+          <div class="col-md-1" ></div>
+          <div class="col-md-4" >
+            <h5 class="text-center">Acknowledgements</h5><br>
+            <p class="text-justify">
+              We would like to thank Nvidia for supporting our research with the donation of a Titan Xp GPU through the NVIDIA GPU Grant Program.
+            </p>
+          </div>
+          <div class="col-md-1" ></div>
+          <div class="col-md-3" >
+            <h5>Contact</h5><br>
+            <p><span id="emaildomain"><i class="fa fa-envelope"></i> <span id="emailname"><span id="cache">m.inutile@bloque.be</span></span></span><br>
+              <i class="fa fa-map-marker"></i> Institut Montefiore, B28<br>
+              &emsp;Allée de la découverte 10,<br>
+              &emsp;4000 Liège<br>
+            </p>
+          </div>
+
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3">
+      </div>
+      <div class="footer-copyright text-center py-3 nav-link">© 2019 Copyright: Mid-Air. All Rights Reserved
+      </div>
+
+    </footer>
+    <!-- Footer -->
+
+
+  </body>
+</html>
